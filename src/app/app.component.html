@@ -2,9 +2,8 @@
     
   <form [formGroup]="EmpForm" (ngSubmit)="Save()">  
       
-      <h3>Employee Table CRUD Operation</h3>  
+      <h3>Employee Table</h3>  
       <div class="row">  
-           
       <table class="table">  
       <tr>  
         <td>Name</td>  
@@ -47,7 +46,8 @@
       <tr>  
     
         <td colspan="2">  
-          <button type="submit" class="btn btn-primary">{{EventValue}}</button>  
+          <button type="submit" class="btn btn-primary">{{EventValue}}</button>&nbsp;&nbsp; 
+          <button type="button" class="btn btn-secondary" (click)="resetFrom()">Reset</button>  
         </td>  
       </tr>  
         

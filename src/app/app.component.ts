@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'EmployeeFrontEnd';
 
   constructor(private ServiceService: ServiceService) { }
-  data: any;
-  EmpForm!: FormGroup;
-  submitted = false;
-  EventValue: any = "Save";
+  public data;
+  public EmpForm!: FormGroup;
+  public submitted = false;
+  public EventValue = 'Save';
 
   ngOnInit(): void {
     this.getdata();
@@ -31,7 +31,7 @@ export class AppComponent {
       this.data = data;
     })
   }
-  deleteData(id: any) {
+  deleteData(id) {
     this.ServiceService.deleteData(id).subscribe((data) => {
       this.data = data;
       this.getdata();
@@ -66,19 +66,19 @@ export class AppComponent {
   }
 
 
-  EditData(Data: any) {
-    this.EmpForm.controls["empId"].setValue(Data.empId);
-    this.EmpForm.controls["empName"].setValue(Data.empName);
-    this.EmpForm.controls["empContact"].setValue(Data.empContact);
-    this.EmpForm.controls["empEmail"].setValue(Data.empEmail);
-    this.EmpForm.controls["empAddress"].setValue(Data.empAddress);
-    this.EventValue = "Update";
+  EditData(Data) {
+    this.EmpForm.controls['empId'].setValue(Data.empId);
+    this.EmpForm.controls['empName'].setValue(Data.empName);
+    this.EmpForm.controls['empContact'].setValue(Data.empContact);
+    this.EmpForm.controls['empEmail'].setValue(Data.empEmail);
+    this.EmpForm.controls['empAddress'].setValue(Data.empAddress);
+    this.EventValue = 'Update';
   }
 
   resetFrom() {
     this.getdata();
     this.EmpForm.reset();
-    this.EventValue = "Save";
+    this.EventValue = 'Save';
     this.submitted = false;
   }
 }

@@ -5,7 +5,7 @@ import { HttpClient,HttpHeaders }    from '@angular/common/http';
 })  
   
 export class ServiceService {
-  baseUrl = 'https://localhost:44339'
+  baseUrl = 'https://localhost:44339'  //webapi host url
   constructor(private http: HttpClient) { }  
   httpOptions = {  
     headers: new HttpHeaders({  
@@ -14,15 +14,15 @@ export class ServiceService {
   }    
   getData(){  
        
-    return this.http.get(this.baseUrl + '/api/Employee');  //https://localhost:44352/ webapi host url  
+    return this.http.get(this.baseUrl + '/api/Employee');   
   }  
-  postData(formData:any){  
+  postData(formData){  
     return this.http.post(this.baseUrl + '/api/Employee',formData);  
   } 
-  putData(id :any,formData :any){  
+  putData(id,formData){  
     return this.http.put(this.baseUrl + '/api/Employee/'+id,formData);  
   }  
-  deleteData(id:any){  
+  deleteData(id){  
     return this.http.delete(this.baseUrl + '/api/Employee/'+id);  
   }  
 }
